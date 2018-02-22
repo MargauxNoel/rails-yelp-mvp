@@ -1,0 +1,12 @@
+<h1>Restaurants#index</h1>
+
+<% @restaurants.each do |restaurant| %>
+<h2><%= link_to restaurant.name, restaurant_path(id: restaurant.id) %></h2>
+<p><%= restaurant.address %></p>
+<p><%= restaurant.phone_number %></p>
+<p><%= restaurant.category %></p>
+<p><%= link_to "Add a review", new_restaurant_review_path(restaurant_id: restaurant.id) %></p>
+<% end %>
+
+<p> <%= link_to "Add a restaurant",  new_restaurant_path %></p>
+
